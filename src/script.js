@@ -32,6 +32,7 @@ document.getElementById('page2').addEventListener('touchend', () => {
 });
 document.getElementById('next-btn').addEventListener('click', event => {
   event.stopPropagation();
+  pageTransition(200);
   counter++;
   setWords(counter, 1);
 });

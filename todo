@@ -1,7 +1,6 @@
-[ ] swipe for next word
-[ ] addeventlisteners for click, mousedown/up
+[x] swipe for next word
+[x] addeventlisteners for click, mousedown/up
 [ ] clean up js
 [ ] add tests
 [ ] loop over ex
 [ ] create api
-[ ] stop propagation when swipping/button click

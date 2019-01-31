@@ -6,9 +6,9 @@ window.addEventListener('resize', appHeight);
 appHeight();
 
 let url = window.location.href;
-if (url === 'http://localhost:1234/') {
-  url += 'static/';
-}
+// if (url === 'http://localhost:1234/') {
+//   //url += 'static/';
+// }
 
 const pageTransition = time => {
   document.getElementById('transition').classList.remove('transition-hide');
@@ -20,23 +20,38 @@ const pageTransition = time => {
 let data;
 let counter = 0;
 
-const setWords = (counter, ans) => {
-  console.log(counter), console.log(ans), console.log(data);
-  document.getElementById('word').innerText = data[counter][ans];
+const setWords = (counter, ans, place, clear = false) => {
+  document.getElementById(place).innerText = clear? '':data[counter][ans];
 };
 
-document.getElementById('page2').addEventListener('touchstart', () => {
-  setWords(counter, 2);
+document.getElementById('show-btn').addEventListener('touchstart', () => {
+  setWords(counter, 2, 'answer');
 });
-document.getElementById('page2').addEventListener('touchend', () => {
-  setWords(counter, 1);
+document.getElementById('show-btn').addEventListener('touchend', () => {
+  setWords(counter, 1, 'answer',true);
 });
-document.getElementById('next-btn').addEventListener('click', event => {
-  event.stopPropagation();
+document.getElementById('show-btn').addEventListener('mousedown', () => {
+  setWords(counter, 2, 'answer');
+});
+document.getElementById('show-btn').addEventListener('mouseup', () => {
+  setWords(counter, 1, 'answer',true);
+});
+function nextWord(ev) {
+
   pageTransition(200);
   counter++;
-  setWords(counter, 1);
-});
+  setTimeout(()=>{
+    if(counter === data.length){
+      document.getElementById('page2').style.height = 0;
+    }else{
+
+      setWords(counter, 1, 'word');
+    }
+
+  },200)
+}
+
+document.getElementById('next-btn').addEventListener('click', nextWord,false);
 
 function shuffle(arra1) {
   let ctr = arra1.length;
@@ -65,8 +80,33 @@ fetch(`${url}data.json`)
     data = shuffle(d);
   });
 
-document.getElementById('start-btn').addEventListener('click', () => {
-  pageTransition(200);
-  document.getElementById('page1').style.height = 0;
-  setWords(counter, 1);
-});
+  document.getElementById('start-btn').addEventListener('click', () => {
+    pageTransition(200);
+    setTimeout(()=>{
+  
+      document.getElementById('page1').style.height = 0;
+      setWords(counter, 1,'word');
+    },200)
+  });
+
+  document.getElementById('close-btn').addEventListener('click', () => {
+    pageTransition(200);
+    setTimeout(()=>{
+
+      document.getElementById('page1').style.height = '100%';
+      document.getElementById('page2').style.height = '100%';
+      counter = 0;
+      data = shuffle(data)
+    },200)
+  });
+
+  document.getElementById('reset-btn').addEventListener('click', () => {
+    pageTransition(200);
+    setTimeout(()=>{
+
+      document.getElementById('page1').style.height = '100%';
+      document.getElementById('page2').style.height = '100%';
+      counter = 0;
+      data = shuffle(data)
+    },200)
+  });

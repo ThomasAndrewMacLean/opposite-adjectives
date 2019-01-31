@@ -25,7 +25,7 @@ body {
 
 }
 
-.container {
+.container {position: relative;
     background: white;
     padding: 0 2rem;
     height: 100%;
@@ -43,14 +43,22 @@ body {
     pointer-events: none;
 }
 
+.btn.btn-sec{
+    background: white;
+    color: #39CCCC;
+    border: 3px solid #39CCCC;
+}
 .btn {
     background: #39CCCC;
     border: none;
-    padding: 2rem;
+    padding: 1.5rem;
     font-size: 2rem;
-    z-index: 999;
+    /* z-index: 999; */
+    margin:0.3rem;
     color: white;
+    cursor: pointer;
 }
+.button-wrap{display: flex;}
 
 .transition-hide {
     opacity: 0 !important;
@@ -60,12 +68,24 @@ body {
 #page1 {
     overflow: hidden;
 }
+#page2 {
+    overflow: hidden;
+}
 
+#answer{
+    min-height: 4rem;
+}
+#close-btn{
+    position: absolute;
+    top: 1rem;
+    cursor: pointer;
+    left: 1rem;
+}
 .transition {
     pointer-events: all;
     background: #39CCCC;
     position: absolute;
-    opacity: 0.6;
+    opacity: 1;
     left: 0;
     right: 0;
     top: 0;

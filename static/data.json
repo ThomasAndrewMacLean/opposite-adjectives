@@ -1,23 +1,313 @@
 [{
-        "1": "alert",
+        "1": "alert ",
         "2": "drowsy"
     },
     {
-
-        "1": "alive",
+        "1": "alive ",
         "2": "dead"
-    }, {
-
-        "1": "asleep",
+    },
+    {
+        "1": "asleep ",
         "2": "awake"
     },
     {
-
-        "1": "awesome",
+        "1": "awesome ",
         "2": "terrible"
     },
     {
-        "1": "beautiful",
+        "1": "beautiful ",
         "2": "ugly"
+    },
+    {
+        "1": "best ",
+        "2": "worst"
+    },
+    {
+        "1": "big ",
+        "2": "small"
+    },
+    {
+        "1": "bitter ",
+        "2": "sweet"
+    },
+    {
+        "1": "brave ",
+        "2": "afraid"
+    },
+    {
+        "1": "bright ",
+        "2": "dull"
+    },
+    {
+        "1": "calm ",
+        "2": "nervous"
+    },
+    {
+        "1": "certain ",
+        "2": "unsure"
+    },
+    {
+        "1": "cheap ",
+        "2": "expensive"
+    },
+    {
+        "1": "clean ",
+        "2": "dirty"
+    },
+    {
+        "1": "close ",
+        "2": "distant"
+    },
+    {
+        "1": "cold ",
+        "2": "hot"
+    },
+    {
+        "1": "complete ",
+        "2": "incomplete"
+    },
+    {
+        "1": "cool ",
+        "2": "uncool"
+    },
+    {
+        "1": "cruel ",
+        "2": "kind"
+    },
+    {
+        "1": "curly ",
+        "2": "straight"
+    },
+    {
+        "1": "dangerous ",
+        "2": "safe"
+    },
+    {
+        "1": "dark ",
+        "2": "light"
+    },
+    {
+        "1": "different ",
+        "2": "same"
+    },
+    {
+        "1": "difficult ",
+        "2": "easy"
+    },
+    {
+        "1": "dirty ",
+        "2": "clean"
+    },
+    {
+        "1": "dry ",
+        "2": "wet"
+    },
+    {
+        "1": "early ",
+        "2": "late"
+    },
+    {
+        "1": "easy ",
+        "2": "difficult"
+    },
+    {
+        "1": "far ",
+        "2": "near"
+    },
+    {
+        "1": "fast ",
+        "2": "slow"
+    },
+    {
+        "1": "fat ",
+        "2": "thin"
+    },
+    {
+        "1": "full ",
+        "2": "empty"
+    },
+    {
+        "1": "future ",
+        "2": "past"
+    },
+    {
+        "1": "good ",
+        "2": "bad"
+    },
+    {
+        "1": "happy ",
+        "2": "sad"
+    },
+    {
+        "1": "healthy ",
+        "2": "sick"
+    },
+    {
+        "1": "hot ",
+        "2": "cold"
+    },
+    {
+        "1": "hungry ",
+        "2": "full"
+    },
+    {
+        "1": "intelligent ",
+        "2": "stupid"
+    },
+    {
+        "1": "interesting ",
+        "2": "boring"
+    },
+    {
+        "1": "lazy",
+        "2": "hardworking "
+    },
+    {
+        "1": "left ",
+        "2": "right"
+    },
+    {
+        "1": "light ",
+        "2": "heavy"
+    },
+    {
+        "1": "loose ",
+        "2": "tight"
+    },
+    {
+        "1": "loud ",
+        "2": "soft"
+    },
+    {
+        "1": "low ",
+        "2": "high"
+    },
+    {
+        "1": "modern ",
+        "2": "traditional"
+    },
+    {
+        "1": "narrow ",
+        "2": "wide"
+    },
+    {
+        "1": "new",
+        "2": "old"
+    },
+    {
+        "1": "nice ",
+        "2": "nasty"
+    },
+    {
+        "1": "normal ",
+        "2": "strange"
+    },
+    {
+        "1": "old ",
+        "2": "young"
+    },
+    {
+        "1": "on ",
+        "2": "off"
+    },
+    {
+        "1": "open ",
+        "2": "closed"
+    },
+    {
+        "1": "polite ",
+        "2": "rude"
+    },
+    {
+        "1": "poor ",
+        "2": "rich"
+    },
+    {
+        "1": "public ",
+        "2": "private"
+    },
+    {
+        "1": "quiet ",
+        "2": "noisy"
+    },
+    {
+        "1": "raw ",
+        "2": "cooked"
+    },
+    {
+        "1": "regular ",
+        "2": "irregular"
+    },
+    {
+        "1": "right ",
+        "2": "wrong"
+    },
+    {
+        "1": "rough ",
+        "2": "smooth"
+    },
+    {
+        "1": "safe ",
+        "2": "dangerous"
+    },
+    {
+        "1": "short ",
+        "2": "long"
+    },
+    {
+        "1": "short ",
+        "2": "tall"
+    },
+    {
+        "1": "single ",
+        "2": "married"
+    },
+    {
+        "1": "small ",
+        "2": "big"
+    },
+    {
+        "1": "small ",
+        "2": "large"
+    },
+    {
+        "1": "smart ",
+        "2": "stupid"
+    },
+    {
+        "1": "soft ",
+        "2": "hard"
+    },
+    {
+        "1": "special ",
+        "2": "ordinary"
+    },
+    {
+        "1": "straight ",
+        "2": "crooked"
+    },
+    {
+        "1": "tender ",
+        "2": "tough"
+    },
+    {
+        "1": "top ",
+        "2": "bottom"
+    },
+    {
+        "1": "true ",
+        "2": "FALSE"
+    },
+    {
+        "1": "well ",
+        "2": "unwell"
+    },
+    {
+        "1": "white ",
+        "2": "black"
+    },
+    {
+        "1": "wise ",
+        "2": "foolish"
     }
 ]

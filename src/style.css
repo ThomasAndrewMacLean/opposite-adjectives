@@ -47,12 +47,17 @@ body {
     border: none;
     padding: 2rem;
     font-size: 2rem;
+    z-index: 999;
     color: white;
 }
 
 .transition-hide {
     opacity: 0 !important;
     pointer-events: none !important;
+}
+
+#page1 {
+    overflow: hidden;
 }
 
 .transition {

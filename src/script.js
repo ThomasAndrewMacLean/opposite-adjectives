@@ -1,4 +1,7 @@
-const url = window.location.href;
+let url = window.location.href;
+if (url === 'http://localhost:1234/') {
+  url += 'static/';
+}
 
 fetch(`${url}data.json`)
   .then(x => x.json())

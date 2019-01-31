@@ -49,3 +49,20 @@ body {
     font-size: 2rem;
     color: white;
 }
+
+.transition-hide {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+.transition {
+    pointer-events: all;
+    background: #39CCCC;
+    position: absolute;
+    opacity: 0.6;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all 200ms ease-in;
+}

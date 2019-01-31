@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Major Mono Display', monospace;
+}
+
+body {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.btn-hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.btn {}

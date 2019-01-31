@@ -1,3 +1,7 @@
+:root {
+    --app-height: 100%;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -12,12 +16,19 @@ body {
     color: #333;
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 26px;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+
+    @media not all and (hover: hover) {
+        height: var(--app-height);
+    }
 }
 
 .container {
     background: white;
     padding: 0 2rem;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;

@@ -21,6 +21,7 @@ let data;
 let counter = 0;
 
 const setWords = (counter, ans) => {
+  console.log(counter), console.log(ans), console.log(data);
   document.getElementById('word').innerText = data[counter][ans];
 };
 
@@ -37,12 +38,31 @@ document.getElementById('next-btn').addEventListener('click', event => {
   setWords(counter, 1);
 });
 
+function shuffle(arra1) {
+  let ctr = arra1.length;
+  let temp;
+  let index;
+
+  // While there are elements in the array
+  while (ctr > 0) {
+    // Pick a random index
+    index = Math.floor(Math.random() * ctr);
+    // Decrease ctr by 1
+    ctr--;
+    // And swap the last element with it
+    temp = arra1[ctr];
+    arra1[ctr] = arra1[index];
+    arra1[index] = temp;
+  }
+  return arra1;
+}
+
 fetch(`${url}data.json`)
   .then(x => x.json())
   .then(d => {
     document.getElementById('start-btn').classList.remove('btn-hide');
     console.log(d);
-    data = d;
+    data = shuffle(d);
   });
 
 document.getElementById('start-btn').addEventListener('click', () => {

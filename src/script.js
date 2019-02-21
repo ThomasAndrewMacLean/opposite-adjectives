@@ -6,9 +6,10 @@ window.addEventListener('resize', appHeight);
 appHeight();
 
 let url = window.location.href;
-// if (url === 'http://localhost:1234/') {
-//   //url += 'static/';
-// }
+let api =
+  'https://xtdghj4hv0.execute-api.eu-west-1.amazonaws.com/latest/getFlashCards';
+
+console.log(process.env.NODE_ENV);
 
 const pageTransition = time => {
   document.getElementById('transition').classList.remove('transition-hide');
@@ -21,37 +22,34 @@ let data;
 let counter = 0;
 
 const setWords = (counter, ans, place, clear = false) => {
-  document.getElementById(place).innerText = clear? '':data[counter][ans];
+  document.getElementById(place).innerText = clear ? '' : data[counter][ans];
 };
 
 document.getElementById('show-btn').addEventListener('touchstart', () => {
   setWords(counter, 2, 'answer');
 });
 document.getElementById('show-btn').addEventListener('touchend', () => {
-  setWords(counter, 1, 'answer',true);
+  setWords(counter, 1, 'answer', true);
 });
 document.getElementById('show-btn').addEventListener('mousedown', () => {
   setWords(counter, 2, 'answer');
 });
 document.getElementById('show-btn').addEventListener('mouseup', () => {
-  setWords(counter, 1, 'answer',true);
+  setWords(counter, 1, 'answer', true);
 });
 function nextWord(ev) {
-
   pageTransition(200);
   counter++;
-  setTimeout(()=>{
-    if(counter === data.length){
+  setTimeout(() => {
+    if (counter === data.length) {
       document.getElementById('page2').style.height = 0;
-    }else{
-
+    } else {
       setWords(counter, 1, 'word');
     }
-
-  },200)
+  }, 200);
 }
 
-document.getElementById('next-btn').addEventListener('click', nextWord,false);
+document.getElementById('next-btn').addEventListener('click', nextWord, false);
 
 function shuffle(arra1) {
   let ctr = arra1.length;
@@ -73,6 +71,7 @@ function shuffle(arra1) {
 }
 
 fetch(`${url}data.json`)
+  //fetch(api) //get from api
   .then(x => x.json())
   .then(d => {
     document.getElementById('start-btn').classList.remove('btn-hide');
@@ -80,33 +79,31 @@ fetch(`${url}data.json`)
     data = shuffle(d);
   });
 
-  document.getElementById('start-btn').addEventListener('click', () => {
-    pageTransition(200);
-    setTimeout(()=>{
-  
-      document.getElementById('page1').style.height = 0;
-      setWords(counter, 1,'word');
-    },200)
-  });
+document.getElementById('start-btn').addEventListener('click', () => {
+  pageTransition(200);
+  setTimeout(() => {
+    document.getElementById('page1').style.height = 0;
+    document.getElementById('page2').style.height = '100%';
+    setWords(counter, 1, 'word');
+  }, 200);
+});
 
-  document.getElementById('close-btn').addEventListener('click', () => {
-    pageTransition(200);
-    setTimeout(()=>{
+document.getElementById('close-btn').addEventListener('click', () => {
+  pageTransition(200);
+  setTimeout(() => {
+    document.getElementById('page1').style.height = '100%';
+    document.getElementById('page2').style.height = '100%';
+    counter = 0;
+    data = shuffle(data);
+  }, 200);
+});
 
-      document.getElementById('page1').style.height = '100%';
-      document.getElementById('page2').style.height = '100%';
-      counter = 0;
-      data = shuffle(data)
-    },200)
-  });
-
-  document.getElementById('reset-btn').addEventListener('click', () => {
-    pageTransition(200);
-    setTimeout(()=>{
-
-      document.getElementById('page1').style.height = '100%';
-      document.getElementById('page2').style.height = '100%';
-      counter = 0;
-      data = shuffle(data)
-    },200)
-  });
+document.getElementById('reset-btn').addEventListener('click', () => {
+  pageTransition(200);
+  setTimeout(() => {
+    document.getElementById('page1').style.height = '100%';
+    document.getElementById('page2').style.height = '100%';
+    counter = 0;
+    data = shuffle(data);
+  }, 200);
+});
